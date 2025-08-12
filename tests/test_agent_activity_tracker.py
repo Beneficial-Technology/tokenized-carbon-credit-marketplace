@@ -21,3 +21,12 @@ def test_log_and_retrieve_activity():
     agent_a_records = tracker.get_activity("agentA")
     assert len(agent_a_records) == 1
     assert agent_a_records[0].timestamp == ts
+
+
+def test_list_agents_returns_unique_sorted():
+    tracker = AgentActivityTracker()
+    tracker.log("B", "foo")
+    tracker.log("A", "bar")
+    tracker.log("A", "baz")
+
+    assert tracker.list_agents() == ["A", "B"]

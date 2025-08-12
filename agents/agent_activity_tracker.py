@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import List, Optional
 
 
 @dataclass
@@ -66,3 +66,7 @@ class AgentActivityTracker:
         if agent_name is None:
             return list(self._records)
         return [r for r in self._records if r.agent == agent_name]
+
+    def list_agents(self) -> List[str]:
+        """Return a sorted list of agents with recorded activity."""
+        return sorted({record.agent for record in self._records})
