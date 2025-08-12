@@ -7,6 +7,7 @@ import Audit from "./components/Pages/CreateGreenNFT/Audit.js";
 import Claim from "./components/Pages/CreateGreenNFT/Claim.js";
 import MyGreenNFTs from "./components/Pages/MyGreenNFTs/index.js";
 import GreenNFTMarketplace from "./components/Pages/GreenNFTMarketplace/index.js";
+import AgentActivity from "./components/Pages/AgentActivity/index.js";
 import ipfs from './components/ipfs/ipfsApi.js'
 
 import { Loader, Button, Card, Input, Heading, Table, Form, Flex, Box, Image } from 'rimble-ui';
@@ -116,7 +117,15 @@ class App extends Component {
     return (
       <div className={styles.wrapper}>
         <GreenNFTMarketplace />
-      </div>    
+      </div>
+    );
+  }
+
+  renderAgentActivity() {
+    return (
+      <div className={styles.wrapper}>
+        <AgentActivity />
+      </div>
     );
   }
 
@@ -129,6 +138,7 @@ class App extends Component {
           {this.state.route === 'audit' && this.renderAudit()}
           {this.state.route === 'my-green-nfts' && this.renderMyGreenNFTs()}
           {this.state.route === 'green-nft-marketplace' && this.renderGreenNFTMarketplace()}
+          {this.state.route === 'agent-activity' && this.renderAgentActivity()}
         <Footer />
       </div>
     );
