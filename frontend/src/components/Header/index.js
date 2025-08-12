@@ -18,6 +18,8 @@ const Header = () => (
             <li><a href="/my-green-nfts" className={styles.link}> My Green NFTs</a></li>
 
             <li><a href="/green-nft-marketplace" className={styles.link}> MarketPlace</a></li>
+            <li><a href="/agents" className={styles.link}> Agents</a></li>
+            <li><a href="/agent-activity" className={styles.link}> Agent Activity</a></li>
           </ul>
         </nav>
     </div>
