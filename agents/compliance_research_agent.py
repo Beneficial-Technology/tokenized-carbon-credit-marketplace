@@ -6,6 +6,8 @@ import logging
 from urllib import request
 from urllib.error import HTTPError, URLError
 
+from agents.models import Requirement
+
 logger = logging.getLogger(__name__)
 
 
